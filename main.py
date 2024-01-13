@@ -3,5 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 x,a = sym.symbols('x a')
-ans = sym.limit((x**2-25)/(x-5),x,5)
-print(ans)
+y =x**4 - 8*x**3 +12*x -5
+
+ans = sym.simplify(sym.diff(y,x))
+
+sol = ans.subs(x,-2)
+print(sol)
